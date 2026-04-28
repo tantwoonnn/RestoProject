@@ -30,8 +30,10 @@
         {
             this.txtPassword = new MaterialSkin.Controls.MaterialTextBox();
             this.txtUsername = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.btnLogin = new MaterialSkin.Controls.MaterialButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // txtPassword
@@ -42,7 +44,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtPassword.Hint = "Enter Password";
             this.txtPassword.LeadingIcon = null;
-            this.txtPassword.Location = new System.Drawing.Point(338, 291);
+            this.txtPassword.Location = new System.Drawing.Point(545, 315);
             this.txtPassword.MaxLength = 50;
             this.txtPassword.MouseState = MaterialSkin.MouseState.OUT;
             this.txtPassword.Multiline = false;
@@ -62,7 +64,7 @@
             this.txtUsername.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtUsername.Hint = "Enter Username";
             this.txtUsername.LeadingIcon = null;
-            this.txtUsername.Location = new System.Drawing.Point(338, 225);
+            this.txtUsername.Location = new System.Drawing.Point(545, 222);
             this.txtUsername.MaxLength = 50;
             this.txtUsername.MouseState = MaterialSkin.MouseState.OUT;
             this.txtUsername.Multiline = false;
@@ -72,19 +74,6 @@
             this.txtUsername.Text = "";
             this.txtUsername.TrailingIcon = null;
             // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(477, 157);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(41, 19);
-            this.materialLabel1.TabIndex = 2;
-            this.materialLabel1.Text = "Login";
-            this.materialLabel1.Click += new System.EventHandler(this.materialLabel1_Click);
-            // 
             // btnLogin
             // 
             this.btnLogin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -92,7 +81,7 @@
             this.btnLogin.Depth = 0;
             this.btnLogin.HighEmphasis = true;
             this.btnLogin.Icon = null;
-            this.btnLogin.Location = new System.Drawing.Point(468, 367);
+            this.btnLogin.Location = new System.Drawing.Point(668, 374);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnLogin.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnLogin.Name = "btnLogin";
@@ -105,13 +94,50 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(549, 114);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(218, 40);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Welcome Back!";
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(553, 284);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(71, 19);
+            this.materialLabel1.TabIndex = 5;
+            this.materialLabel1.Text = "Password";
+            this.materialLabel1.Click += new System.EventHandler(this.materialLabel1_Click_1);
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel2.Location = new System.Drawing.Point(553, 191);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(72, 19);
+            this.materialLabel2.TabIndex = 6;
+            this.materialLabel2.Text = "Username";
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 500);
-            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.txtPassword);
             this.Name = "frmLogin";
@@ -127,8 +153,10 @@
 
         private MaterialSkin.Controls.MaterialTextBox txtPassword;
         private MaterialSkin.Controls.MaterialTextBox txtUsername;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialButton btnLogin;
+        private System.Windows.Forms.Label label1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
     }
 }
 
