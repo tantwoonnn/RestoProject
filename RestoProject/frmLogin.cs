@@ -1,5 +1,4 @@
-﻿using MaterialSkin;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,17 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MaterialSkin.Controls;
 using System.Diagnostics.Eventing.Reader;
 
 namespace RestoProject
 {
-    public partial class frmLogin : MaterialForm
+    public partial class frmLogin : Form
     {
         public frmLogin()
         {
             InitializeComponent();
-            MaterialSkinManager.Instance.AddFormToManage(this);
         }
 
         private void Form1_Load(object sender, EventArgs e)
