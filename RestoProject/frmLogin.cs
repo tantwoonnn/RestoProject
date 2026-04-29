@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics.Eventing.Reader;
+using System.IO;
 
 namespace RestoProject
 {
     public partial class frmLogin : Form
     {
+        private string attemptsFile = "attempts.txt";
+        public frmLogin()
         {
             InitializeComponent();
         }
@@ -34,6 +37,16 @@ namespace RestoProject
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            // AI Generated : Login Attempt Tracking
+            int loginAttempts = File.Exists(attemptsFile) ? Convert.ToInt32(File.ReadAllText(attemptsFile)) : 0;
+            // End
+            if (loginAttempts >= 5)
+            {
+                MessageBox.Show("Too many login attempts. Please contact your admin.", "Login Failed");
+                btnLogin.Enabled = false;
+                return;
+            }
+
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
 
@@ -58,6 +71,8 @@ namespace RestoProject
 
                 if (count == 1)
                 {
+                    File.WriteAllText(attemptsFile, "0");
+
                     string roleQuery = "SELECT role FROM users WHERE Username = @username AND Password = @password";
                     MySql.Data.MySqlClient.MySqlCommand roleCmd = new MySql.Data.MySqlClient.MySqlCommand(roleQuery, db.Connection);
                     roleCmd.Parameters.AddWithValue("@username", username);
@@ -93,7 +108,15 @@ namespace RestoProject
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Username or Password. Login Attempts: ","Login Failed");
+                    loginAttempts++;
+                    File.WriteAllText(attemptsFile, loginAttempts.ToString());
+                    MessageBox.Show("Invalid Username or Password. Attempts: " + loginAttempts + "/5", "Login Failed");
+
+                    if (loginAttempts >= 5)
+                    {
+                        MessageBox.Show("Too many login attempts. Please contact your admin.", "Login Failed");
+                        btnLogin.Enabled = false;
+                    }
                 }
             }
             catch (Exception ex)
