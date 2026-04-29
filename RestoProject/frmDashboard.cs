@@ -62,17 +62,17 @@ namespace RestoProject
 
         private void btnEmployees_Click(object sender, EventArgs e)
         {
-            ShowPanel(new ucMainDash());
+            ShowPanel(new ucEmployees());
         }
 
         private void btnReports_Click(object sender, EventArgs e)
         {
-            ShowPanel(new ucMainDash());
+            ShowPanel(new ucReports());
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            ShowPanel(new ucMainDash());
+            ShowPanel(new ucSettings());
         }
     }
 }
