@@ -13,7 +13,6 @@ namespace RestoProject
 {
     public partial class frmLogin : Form
     {
-        public frmLogin()
         {
             InitializeComponent();
         }
@@ -94,7 +93,7 @@ namespace RestoProject
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Username or Password.", "Login Failed");
+                    MessageBox.Show("Invalid Username or Password. Login Attempts: ","Login Failed");
                 }
             }
             catch (Exception ex)
