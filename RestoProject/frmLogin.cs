@@ -40,7 +40,7 @@ namespace RestoProject
             // AI Generated : Login Attempt Tracking
             int loginAttempts = File.Exists(attemptsFile) ? Convert.ToInt32(File.ReadAllText(attemptsFile)) : 0;
             // End of AI Generated Code
-
+                
             if (loginAttempts >= 5)
             {
                 MessageBox.Show("Too many login attempts. Please contact your admin.", "Login Failed");
