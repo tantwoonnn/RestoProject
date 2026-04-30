@@ -33,6 +33,17 @@ namespace RestoProject
             label1.Text = "Welcome, " + CurrentUser + "!";
             label2.Text = "Postion: " + CurrentRole;
 
+            if (CurrentRole == "Staff")
+            {
+                btnEmployees.Enabled = false;
+                btnSettings.Enabled = false;
+                btnReports.Enabled = false;
+            }
+            if (CurrentRole == "Manager")
+            {
+                btnSettings.Enabled = false;
+            } 
+
             ucMainDash dash = new ucMainDash();
             dash.Dock = DockStyle.Fill;
             pnlTab.Controls.Add(dash);
