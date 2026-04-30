@@ -53,7 +53,7 @@ namespace RestoProject
                 lblEmployeeCount.Text = countEmp.ToString();
                 lblStock.Text = Stock.ToString();
 
-                if (Stock > 10)
+                if (Stock != 0)
                 {
                     lblStock.ForeColor = Color.Red;
                 }
