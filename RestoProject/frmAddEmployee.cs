@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace RestoProject
 {
-    public partial class frmAddProduct : Form
+    public partial class frmAddEmployee : Form
     {
-        public frmAddProduct()
+        public frmAddEmployee()
         {
             InitializeComponent();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             DBConnect db = new DBConnect();
 
@@ -26,26 +31,26 @@ namespace RestoProject
                 db.Open();
 
                 if (string.IsNullOrWhiteSpace(txtName.Text) ||
-                    string.IsNullOrWhiteSpace(txtCategory.Text) ||
-                    string.IsNullOrWhiteSpace(txtQuantity.Text) ||
-                    string.IsNullOrWhiteSpace(txtPrice.Text))
+                    string.IsNullOrWhiteSpace(txtPosition.Text) ||
+                    string.IsNullOrWhiteSpace(txtContact.Text) ||
+                    string.IsNullOrWhiteSpace(txtUserID.Text))
                 {
                     MessageBox.Show("Please fill all fields.");
                     return;
                 }
 
-                string query = "INSERT INTO products (ProductName, Category, Quantity, Price)VALUES(@name, @category, @quantity, @price)";
+                string query = "INSERT INTO employees (FullName, Position, ContactNumber, UserID)VALUES(@name, @position, @contact, @userid)";
 
                 var cmd = new MySql.Data.MySqlClient.MySqlCommand(query, db.Connection);
 
                 cmd.Parameters.AddWithValue("@name", txtName.Text);
-                cmd.Parameters.AddWithValue("@category", txtCategory.Text);
-                cmd.Parameters.AddWithValue("@quantity", Convert.ToInt32(txtQuantity.Text));
-                cmd.Parameters.AddWithValue("@price", Convert.ToDecimal(txtPrice.Text));
+                cmd.Parameters.AddWithValue("@position", txtPosition.Text);
+                cmd.Parameters.AddWithValue("@contact", txtContact.Text);
+                cmd.Parameters.AddWithValue("@userid", Convert.ToInt32(txtUserID.Text));
 
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Product added successfully!");
+                MessageBox.Show("Employee added successfully!");
 
                 this.Close();
             }
@@ -57,16 +62,6 @@ namespace RestoProject
             {
                 db.Close();
             }
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void frmAddProduct_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

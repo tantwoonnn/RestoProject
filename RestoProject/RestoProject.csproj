@@ -117,6 +117,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBConnect.cs" />
+    <Compile Include="frmAddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddEmployee.Designer.cs">
+      <DependentUpon>frmAddEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAddProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,12 @@
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModifyEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModifyEmployee.Designer.cs">
+      <DependentUpon>frmModifyEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="frmModifyProduct.cs">
       <SubType>Form</SubType>
@@ -173,6 +185,9 @@
     <Compile Include="ucSettings.Designer.cs">
       <DependentUpon>ucSettings.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmAddEmployee.resx">
+      <DependentUpon>frmAddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAddProduct.resx">
       <DependentUpon>frmAddProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModifyEmployee.resx">
+      <DependentUpon>frmModifyEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmModifyProduct.resx">
       <DependentUpon>frmModifyProduct.cs</DependentUpon>

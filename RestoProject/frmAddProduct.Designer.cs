@@ -97,6 +97,7 @@
             this.Controls.Add(this.txtName);
             this.Name = "frmAddProduct";
             this.Text = "frmAddProduct";
+            this.Load += new System.EventHandler(this.frmAddProduct_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
