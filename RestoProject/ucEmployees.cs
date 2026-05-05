@@ -113,10 +113,7 @@ namespace RestoProject
                 return;
             }
 
-            var confirm = MessageBox.Show("Delete this employee?",
-                                          "Confirm",
-                                          MessageBoxButtons.YesNo,
-                                          MessageBoxIcon.Warning);
+            var confirm = MessageBox.Show("Delete this employee?","Confirm",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
 
             if (confirm != DialogResult.Yes) return;
 
