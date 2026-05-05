@@ -153,5 +153,10 @@ namespace RestoProject
                 dgvEmployees.Rows[e.RowIndex].Selected = true;
             }
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            LoadEmployees();
+        }
     }
 }
