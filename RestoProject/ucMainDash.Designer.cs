@@ -35,7 +35,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblEmployeeCount = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dgvLowStock = new System.Windows.Forms.DataGridView();
+            this.dgvStock = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,7 +43,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLowStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,7 +106,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.dgvLowStock);
+            this.groupBox4.Controls.Add(this.dgvStock);
             this.groupBox4.Location = new System.Drawing.Point(396, 169);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(310, 246);
@@ -114,13 +114,13 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Low Stock Alert";
             // 
-            // dgvLowStock
+            // dgvStock
             // 
-            this.dgvLowStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLowStock.Location = new System.Drawing.Point(25, 37);
-            this.dgvLowStock.Name = "dgvLowStock";
-            this.dgvLowStock.Size = new System.Drawing.Size(262, 188);
-            this.dgvLowStock.TabIndex = 0;
+            this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStock.Location = new System.Drawing.Point(25, 37);
+            this.dgvStock.Name = "dgvStock";
+            this.dgvStock.Size = new System.Drawing.Size(262, 188);
+            this.dgvStock.TabIndex = 0;
             // 
             // groupBox5
             // 
@@ -170,7 +170,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLowStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
@@ -186,7 +186,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label lblEmployeeCount;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.DataGridView dgvLowStock;
+        private System.Windows.Forms.DataGridView dgvStock;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox5;
