@@ -50,7 +50,7 @@ namespace RestoProject
 
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Employee added successfully!");
+                MessageBox.Show("Employee added successfully.");
 
                 this.Close();
             }

@@ -82,30 +82,15 @@ namespace RestoProject
                     string role = roleCmd.ExecuteScalar().ToString().ToLower();
                     roleCmd.Dispose();
 
-                    if (role == "admin")
-                    {
-                        MessageBox.Show("Login Successful!", "Welcome Admin " + username);
+                    Properties.Settings.Default.IsLoggedIn = true;
+                    Properties.Settings.Default.Username = username;
+                    Properties.Settings.Default.Role = role;
+                    Properties.Settings.Default.Save();
 
-                        frmDashboard dashboard = new frmDashboard(username, "Admin");
-                        dashboard.Show();
-                        this.Hide();
-                    }
-                    else if (role == "manager")
-                    {
-                        MessageBox.Show("Login Successful!", "Welcome Manager " + username);
-
-                        frmDashboard dashboard = new frmDashboard(username, "Manager");
-                        dashboard.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Login Successful!", "Welcome Staff " + username);
-
-                        frmDashboard dashboard = new frmDashboard(username, "Staff");
-                        dashboard.Show();
-                        this.Hide();
-                    }
+                    MessageBox.Show($"Login Successful! Welcome {role} {username}");
+                    frmDashboard dashboard = new frmDashboard(username, role);
+                    dashboard.Show();
+                    this.Hide();
                 }
                 else
                 {

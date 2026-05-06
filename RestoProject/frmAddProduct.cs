@@ -45,7 +45,7 @@ namespace RestoProject
 
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Product added successfully!");
+                MessageBox.Show("Product added successfully.");
 
                 this.Close();
             }

@@ -16,7 +16,17 @@ namespace RestoProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            if (Properties.Settings.Default.IsLoggedIn)
+            {
+                string username = Properties.Settings.Default.Username;
+                string role = Properties.Settings.Default.Role;
+
+                Application.Run(new frmDashboard(username, role));
+            }
+            else
+            {
+                Application.Run(new frmLogin());
+            }
         }
     }
 }

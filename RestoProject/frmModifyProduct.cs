@@ -62,7 +62,7 @@ namespace RestoProject
 
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Product updated successfully!");
+                MessageBox.Show("Product updated successfully.");
                 this.Close();
             }
             catch (Exception ex)
