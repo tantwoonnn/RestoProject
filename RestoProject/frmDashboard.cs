@@ -26,6 +26,10 @@ namespace RestoProject
             CurrentUser = username;
             CurrentRole = role;
             this.credential = credential;
+            this.Size = new Size(1000, 600);
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -38,16 +42,11 @@ namespace RestoProject
             label1.Text = "Welcome, " + CurrentUser + "!";
             label2.Text = "Postion: " + CurrentRole;
 
-            if (CurrentRole == "Staff")
+            if (CurrentRole == "staff")
             {
                 btnEmployees.Enabled = false;
-                btnSettings.Enabled = false;
                 btnReports.Enabled = false;
             }
-            if (CurrentRole == "Manager")
-            {
-                btnSettings.Enabled = false;
-            } 
 
             ucMainDash dash = new ucMainDash();
             dash.Dock = DockStyle.Fill;

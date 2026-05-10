@@ -21,6 +21,10 @@ namespace RestoProject
         public frmModifyProduct()
         {
             InitializeComponent();
+            this.Size = new Size(500, 400);
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void frmModifyProduct_Load(object sender, EventArgs e)

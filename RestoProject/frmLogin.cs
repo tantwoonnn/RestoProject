@@ -26,6 +26,10 @@ namespace RestoProject
         public frmLogin()
         {
             InitializeComponent();
+            this.Size = new Size(1000, 600);
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -75,6 +79,14 @@ namespace RestoProject
                 {
                     reader.Close();
                     cmd.Dispose();
+
+                    string tokenFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Google.Apis.Auth");
+
+                    if (Directory.Exists(tokenFolder))
+                    {
+                        Directory.Delete(tokenFolder, true);
+                    }
+
                     MessageBox.Show("Your Google account is not registered in the system.", "Access Denied");
                 }
             }
@@ -191,6 +203,13 @@ namespace RestoProject
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void lblNoAccount_Click(object sender, EventArgs e)
+        {
+            frmRegister registerForm = new frmRegister();
+            registerForm.Show();
+            this.Hide();
         }
     }
 }

@@ -15,6 +15,7 @@ namespace RestoProject
         public ucEmployees()
         {
             InitializeComponent();
+            this.Size = new Size(724, 472);
         }
         private void LoadEmployees()
         {

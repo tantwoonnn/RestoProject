@@ -15,6 +15,7 @@ namespace RestoProject
         public ucInventory()
         {
             InitializeComponent();
+            this.Size = new Size(724, 472);
         }
         private bool HasSelectedRow()
         {

@@ -16,6 +16,7 @@ namespace RestoProject
         public ucMainDash()
         {
             InitializeComponent();
+            this.Size = new Size(724, 472);
         }
 
         public static void dgvFormatter(DataGridView dgvStyle)

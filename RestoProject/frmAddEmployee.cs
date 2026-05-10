@@ -15,6 +15,10 @@ namespace RestoProject
         public frmAddEmployee()
         {
             InitializeComponent();
+            this.Size = new Size(500, 400);
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)

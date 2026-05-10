@@ -15,6 +15,7 @@ namespace RestoProject
         public ucReports()
         {
             InitializeComponent();
+            this.Size = new Size(724, 472);
         }
     }
 }

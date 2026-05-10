@@ -25,7 +25,7 @@ namespace RestoProject
             }
             else
             {
-                Application.Run(new frmLogin());
+                Application.Run(new frmRegister());
             }
         }
     }
