@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Google.Apis.Auth.OAuth2;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
+using System.IO;
 
 
 namespace RestoProject
@@ -15,12 +18,14 @@ namespace RestoProject
     {
         public string CurrentUser { get; set; }
         public string CurrentRole { get; set; }
+        private UserCredential credential;
 
-        public frmDashboard(string username, string role)
+        public frmDashboard(string username, string role, UserCredential credential = null)
         {
             InitializeComponent();
             CurrentUser = username;
             CurrentRole = role;
+            this.credential = credential;
         }
 
         private void label1_Click(object sender, EventArgs e)

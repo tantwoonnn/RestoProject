@@ -58,5 +58,17 @@ namespace RestoProject.Properties {
                 this["Role"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsGoogleLogin {
+            get {
+                return ((bool)(this["IsGoogleLogin"]));
+            }
+            set {
+                this["IsGoogleLogin"] = value;
+            }
+        }
     }
 }

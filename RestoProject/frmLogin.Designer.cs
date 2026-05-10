@@ -34,13 +34,13 @@
             this.materialLabel1 = new System.Windows.Forms.Label();
             this.materialLabel2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnGoogleLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(551, 319);
+            this.txtPassword.Location = new System.Drawing.Point(299, 326);
             this.txtPassword.MaxLength = 50;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
@@ -50,7 +50,7 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(551, 226);
+            this.txtUsername.Location = new System.Drawing.Point(299, 233);
             this.txtUsername.MaxLength = 50;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(324, 20);
@@ -58,7 +58,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(674, 378);
+            this.btnLogin.Location = new System.Drawing.Point(422, 385);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(100, 36);
             this.btnLogin.TabIndex = 3;
@@ -69,7 +69,7 @@
             // materialLabel1
             // 
             this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Location = new System.Drawing.Point(559, 288);
+            this.materialLabel1.Location = new System.Drawing.Point(307, 295);
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(53, 13);
             this.materialLabel1.TabIndex = 5;
@@ -79,7 +79,7 @@
             // materialLabel2
             // 
             this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Location = new System.Drawing.Point(559, 195);
+            this.materialLabel2.Location = new System.Drawing.Point(307, 202);
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(55, 13);
             this.materialLabel2.TabIndex = 6;
@@ -88,37 +88,38 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(562, 106);
+            this.label1.Location = new System.Drawing.Point(310, 113);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Login";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(61, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Log in with";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 469);
+            this.label3.Location = new System.Drawing.Point(12, 521);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 9;
             this.label3.Text = "Safe Ver.";
             // 
+            // btnGoogleLogin
+            // 
+            this.btnGoogleLogin.Location = new System.Drawing.Point(413, 436);
+            this.btnGoogleLogin.Name = "btnGoogleLogin";
+            this.btnGoogleLogin.Size = new System.Drawing.Size(119, 23);
+            this.btnGoogleLogin.TabIndex = 10;
+            this.btnGoogleLogin.Text = "Log in with Google";
+            this.btnGoogleLogin.UseVisualStyleBackColor = true;
+            this.btnGoogleLogin.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 500);
+            this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.btnGoogleLogin);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
@@ -141,8 +142,8 @@
         private System.Windows.Forms.Label materialLabel1;
         private System.Windows.Forms.Label materialLabel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnGoogleLogin;
     }
 }
 

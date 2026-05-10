@@ -1,20 +1,28 @@
-﻿using System;
+﻿using Google.Apis.Auth.OAuth2;
+using Google.Apis.Auth.OAuth2.Flows;
+using Google.Apis.Auth.OAuth2.Responses;
+using Google.Apis.Oauth2.v2;
+using Google.Apis.Oauth2.v2.Data;
+using Google.Apis.Services;
+using System.Threading;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Diagnostics.Eventing.Reader;
-using System.IO;
 
 namespace RestoProject
 {
     public partial class frmLogin : Form
     {
         private string attemptsFile = "attempts.txt";
+        private UserCredential credential;
         public frmLogin()
         {
             InitializeComponent();
@@ -34,7 +42,51 @@ namespace RestoProject
         {
 
         }
+        private void CheckGoogleUser(string email, string name)
+        {
+            DBConnect db = new DBConnect();
+            try
+            {
+                db.Open();
+                string query = "SELECT role, Username FROM users WHERE email = @email";
+                MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(query, db.Connection);
+                cmd.Parameters.AddWithValue("@email", email);
 
+                MySql.Data.MySqlClient.MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    string role = reader["role"].ToString();
+                    string username = reader["Username"].ToString();
+                    reader.Close();
+                    cmd.Dispose();
+
+                    Properties.Settings.Default.IsLoggedIn = true;
+                    Properties.Settings.Default.Username = username;
+                    Properties.Settings.Default.Role = role;
+                    Properties.Settings.Default.IsGoogleLogin = true;
+                    Properties.Settings.Default.Save();
+
+                    frmDashboard dashboard = new frmDashboard(username, role, credential);
+                    dashboard.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    reader.Close();
+                    cmd.Dispose();
+                    MessageBox.Show("Your Google account is not registered in the system.", "Access Denied");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                db.Close();
+            }
+        }
         private void btnLogin_Click(object sender, EventArgs e)
         {
             // AI Generated : Login Attempt Tracking
@@ -118,6 +170,27 @@ namespace RestoProject
         private void materialLabel1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(new ClientSecrets{ClientId = "644592012507-n16tbn02v0vs54csdujmnuvabnmgjthp.apps.googleusercontent.com",ClientSecret = "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"},new[] {"email", "profile" }, "user", CancellationToken.None);
+
+                var oauthService = new Oauth2Service(new BaseClientService.Initializer(){HttpClientInitializer = credential});
+
+                Userinfo userInfo = await oauthService.Userinfo.Get().ExecuteAsync();
+
+                string email = userInfo.Email;
+                string name = userInfo.Name;
+
+                CheckGoogleUser(email, name);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
