@@ -13,6 +13,8 @@ namespace RestoProject
 {
     public partial class ucSettings : UserControl
     {
+        private string verificationCode;
+        private bool emailVerified = false;
         public ucSettings()
         {
             InitializeComponent();
@@ -32,7 +34,30 @@ namespace RestoProject
 
         }
         // End of AI generated code
+        private string GetUserEmail()
+        {
+            DBConnect db = new DBConnect();
+            try
+            {
+                db.Open();
+                string query = "SELECT email FROM users WHERE Username = @username";
+                MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(query, db.Connection);
+                cmd.Parameters.AddWithValue("@username", Properties.Settings.Default.Username);
 
+                string email = cmd.ExecuteScalar().ToString();
+                cmd.Dispose();
+                return email;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return "";
+            }
+            finally
+            {
+                db.Close();
+            }
+        }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -94,6 +119,11 @@ namespace RestoProject
             string newPassword = txtNewPassword.Text.Trim();
             string confirmPassword = txtConfirmPassword.Text.Trim();
 
+            if (!emailVerified)
+            {
+                MessageBox.Show("Please verify your email first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (oldPassword == "" || newPassword == "" || confirmPassword == "")
             {
                 MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -143,6 +173,13 @@ namespace RestoProject
                     txtConfirmPassword.Text = "";
 
                     MessageBox.Show("Password changed successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    emailVerified = false;
+                    btnSendCode.Enabled = true;
+                    lblVerifyStatus.Text = "";
+                    txtVerifyCode.Text = "";
+                    txtVerifyCode.Enabled = false;
+                    btnVerifyCode.Enabled = false;
                 }
                 else
                 {
@@ -254,6 +291,63 @@ namespace RestoProject
             else
             {
                 lblLastEdited.Text = "Last edited by: Never";
+            }
+        }
+
+        private void btnSendCode_Click(object sender, EventArgs e)
+        {
+            string email = GetUserEmail();
+
+            if (email == "")
+            {
+                MessageBox.Show("No email found for this account.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            try
+            {
+                verificationCode = new Random().Next(100000, 999999).ToString();
+
+                var message = new MimeKit.MimeMessage();
+                message.From.Add(new MimeKit.MailboxAddress("Axioma", "kristanerasmo@gmail.com"));
+                message.To.Add(new MimeKit.MailboxAddress("", email));
+                message.Subject = "Password Change Verification Code";
+                message.Body = new MimeKit.TextPart("plain") { Text = "Your verification code is: " + verificationCode + "\n\nDo not share this code with anyone." };
+
+                using (var client = new MailKit.Net.Smtp.SmtpClient())
+                {
+                    client.Connect("smtp.gmail.com", 587, false);
+                    client.Authenticate("kristanerasmo@gmail.com", "ywtnhddzhkjinvzu");
+                    client.Send(message);
+                    client.Disconnect(true);
+                }
+
+                MessageBox.Show("Verification code sent to " + email, "Success");
+                btnSendCode.Enabled = false;
+                btnVerifyCode.Enabled = true;
+                txtVerifyCode.Enabled = true;
+                emailVerified = false;
+                lblVerifyStatus.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnVerifyCode_Click(object sender, EventArgs e)
+        {
+            if (txtVerifyCode.Text.Trim() == verificationCode)
+            {
+                emailVerified = true;
+                lblVerifyStatus.Text = "Verified!";
+                lblVerifyStatus.ForeColor = Color.Green;
+                btnVerifyCode.Enabled = false;
+                txtVerifyCode.Enabled = false;
+                MessageBox.Show("Verified! You can now change your password.", "Success");
+            }
+            else
+            {
+                MessageBox.Show("Invalid verification code.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

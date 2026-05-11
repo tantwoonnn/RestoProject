@@ -182,10 +182,7 @@ namespace RestoProject
                 message.From.Add(new MimeKit.MailboxAddress("Axioma", "kristanerasmo@gmail.com"));
                 message.To.Add(new MimeKit.MailboxAddress("", email));
                 message.Subject = "Email Verification Code";
-                message.Body = new MimeKit.TextPart("plain")
-                {
-                    Text = "Your verification code is: " + verificationCode + "\n\nDo not share this code with anyone."
-                };
+                message.Body = new MimeKit.TextPart("plain"){Text = "Your verification code is: " + verificationCode + "\n\nDo not share this code with anyone."};
 
                 using (var client = new MailKit.Net.Smtp.SmtpClient())
                 {

@@ -32,25 +32,26 @@
             this.txtClientSecret = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.lblClient = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtClientId
             // 
-            this.txtClientId.Location = new System.Drawing.Point(64, 45);
+            this.txtClientId.Location = new System.Drawing.Point(64, 55);
             this.txtClientId.Name = "txtClientId";
             this.txtClientId.Size = new System.Drawing.Size(251, 20);
             this.txtClientId.TabIndex = 0;
             // 
             // txtClientSecret
             // 
-            this.txtClientSecret.Location = new System.Drawing.Point(64, 86);
+            this.txtClientSecret.Location = new System.Drawing.Point(64, 103);
             this.txtClientSecret.Name = "txtClientSecret";
             this.txtClientSecret.Size = new System.Drawing.Size(251, 20);
             this.txtClientSecret.TabIndex = 1;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(91, 161);
+            this.btnSave.Location = new System.Drawing.Point(64, 161);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 2;
@@ -60,7 +61,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(207, 161);
+            this.btnCancel.Location = new System.Drawing.Point(240, 161);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 3;
@@ -68,11 +69,21 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // lblClient
+            // 
+            this.lblClient.AutoSize = true;
+            this.lblClient.Location = new System.Drawing.Point(61, 39);
+            this.lblClient.Name = "lblClient";
+            this.lblClient.Size = new System.Drawing.Size(73, 13);
+            this.lblClient.TabIndex = 4;
+            this.lblClient.Text = "Current Client:";
+            // 
             // frmSecretSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 211);
+            this.Controls.Add(this.lblClient);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtClientSecret);
@@ -91,5 +102,6 @@
         private System.Windows.Forms.TextBox txtClientSecret;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lblClient;
     }
 }

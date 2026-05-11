@@ -41,18 +41,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pnlDatabase = new System.Windows.Forms.Panel();
-            this.btnBackup = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblLastEdited = new System.Windows.Forms.Label();
+            this.btnUserManage = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnRestore = new System.Windows.Forms.Button();
             this.lblLastBackup = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnUserManage = new System.Windows.Forms.Button();
-            this.lblLastEdited = new System.Windows.Forms.Label();
+            this.btnBackup = new System.Windows.Forms.Button();
+            this.txtVerifyCode = new System.Windows.Forms.TextBox();
+            this.btnSendCode = new System.Windows.Forms.Button();
+            this.btnVerifyCode = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblVerifyStatus = new System.Windows.Forms.Label();
             this.pnlAccount.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.pnlDatabase.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLogout
@@ -86,6 +91,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblVerifyStatus);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.btnVerifyCode);
+            this.groupBox1.Controls.Add(this.btnSendCode);
+            this.groupBox1.Controls.Add(this.txtVerifyCode);
             this.groupBox1.Controls.Add(this.txtOldPassword);
             this.groupBox1.Controls.Add(this.btnChangePassword);
             this.groupBox1.Controls.Add(this.label3);
@@ -95,7 +105,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(14, 21);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(293, 234);
+            this.groupBox1.Size = new System.Drawing.Size(577, 234);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Change Password";
@@ -183,15 +193,48 @@
             this.pnlDatabase.Size = new System.Drawing.Size(624, 313);
             this.pnlDatabase.TabIndex = 6;
             // 
-            // btnBackup
+            // groupBox3
             // 
-            this.btnBackup.Location = new System.Drawing.Point(20, 29);
-            this.btnBackup.Name = "btnBackup";
-            this.btnBackup.Size = new System.Drawing.Size(246, 40);
-            this.btnBackup.TabIndex = 0;
-            this.btnBackup.Text = "Backup Database";
-            this.btnBackup.UseVisualStyleBackColor = true;
-            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
+            this.groupBox3.Controls.Add(this.lblLastEdited);
+            this.groupBox3.Controls.Add(this.btnUserManage);
+            this.groupBox3.Location = new System.Drawing.Point(324, 30);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(283, 180);
+            this.groupBox3.TabIndex = 4;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "User Management";
+            // 
+            // lblLastEdited
+            // 
+            this.lblLastEdited.AutoSize = true;
+            this.lblLastEdited.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastEdited.Location = new System.Drawing.Point(12, 99);
+            this.lblLastEdited.Name = "lblLastEdited";
+            this.lblLastEdited.Size = new System.Drawing.Size(67, 15);
+            this.lblLastEdited.TabIndex = 3;
+            this.lblLastEdited.Text = "Last Edited:";
+            // 
+            // btnUserManage
+            // 
+            this.btnUserManage.Location = new System.Drawing.Point(15, 29);
+            this.btnUserManage.Name = "btnUserManage";
+            this.btnUserManage.Size = new System.Drawing.Size(252, 40);
+            this.btnUserManage.TabIndex = 3;
+            this.btnUserManage.Text = "Manage Users";
+            this.btnUserManage.UseVisualStyleBackColor = true;
+            this.btnUserManage.Click += new System.EventHandler(this.btnUserManage_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnRestore);
+            this.groupBox2.Controls.Add(this.lblLastBackup);
+            this.groupBox2.Controls.Add(this.btnBackup);
+            this.groupBox2.Location = new System.Drawing.Point(14, 30);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(286, 180);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Database Backup";
             // 
             // btnRestore
             // 
@@ -214,48 +257,60 @@
             this.lblLastBackup.Text = "Last Backup:";
             this.lblLastBackup.Click += new System.EventHandler(this.lblLastBackup_Click);
             // 
-            // groupBox2
+            // btnBackup
             // 
-            this.groupBox2.Controls.Add(this.btnRestore);
-            this.groupBox2.Controls.Add(this.lblLastBackup);
-            this.groupBox2.Controls.Add(this.btnBackup);
-            this.groupBox2.Location = new System.Drawing.Point(14, 30);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(286, 180);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Database Backup";
+            this.btnBackup.Location = new System.Drawing.Point(20, 29);
+            this.btnBackup.Name = "btnBackup";
+            this.btnBackup.Size = new System.Drawing.Size(246, 40);
+            this.btnBackup.TabIndex = 0;
+            this.btnBackup.Text = "Backup Database";
+            this.btnBackup.UseVisualStyleBackColor = true;
+            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
             // 
-            // groupBox3
+            // txtVerifyCode
             // 
-            this.groupBox3.Controls.Add(this.lblLastEdited);
-            this.groupBox3.Controls.Add(this.btnUserManage);
-            this.groupBox3.Location = new System.Drawing.Point(324, 30);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(283, 180);
-            this.groupBox3.TabIndex = 4;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "User Management";
+            this.txtVerifyCode.Location = new System.Drawing.Point(266, 147);
+            this.txtVerifyCode.Name = "txtVerifyCode";
+            this.txtVerifyCode.Size = new System.Drawing.Size(123, 20);
+            this.txtVerifyCode.TabIndex = 9;
             // 
-            // btnUserManage
+            // btnSendCode
             // 
-            this.btnUserManage.Location = new System.Drawing.Point(15, 29);
-            this.btnUserManage.Name = "btnUserManage";
-            this.btnUserManage.Size = new System.Drawing.Size(252, 40);
-            this.btnUserManage.TabIndex = 3;
-            this.btnUserManage.Text = "Manage Users";
-            this.btnUserManage.UseVisualStyleBackColor = true;
-            this.btnUserManage.Click += new System.EventHandler(this.btnUserManage_Click);
+            this.btnSendCode.Location = new System.Drawing.Point(266, 173);
+            this.btnSendCode.Name = "btnSendCode";
+            this.btnSendCode.Size = new System.Drawing.Size(75, 23);
+            this.btnSendCode.TabIndex = 10;
+            this.btnSendCode.Text = "Send Code";
+            this.btnSendCode.UseVisualStyleBackColor = true;
+            this.btnSendCode.Click += new System.EventHandler(this.btnSendCode_Click);
             // 
-            // lblLastEdited
+            // btnVerifyCode
             // 
-            this.lblLastEdited.AutoSize = true;
-            this.lblLastEdited.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastEdited.Location = new System.Drawing.Point(12, 99);
-            this.lblLastEdited.Name = "lblLastEdited";
-            this.lblLastEdited.Size = new System.Drawing.Size(67, 15);
-            this.lblLastEdited.TabIndex = 3;
-            this.lblLastEdited.Text = "Last Edited:";
+            this.btnVerifyCode.Location = new System.Drawing.Point(395, 145);
+            this.btnVerifyCode.Name = "btnVerifyCode";
+            this.btnVerifyCode.Size = new System.Drawing.Size(75, 23);
+            this.btnVerifyCode.TabIndex = 11;
+            this.btnVerifyCode.Text = "Verify";
+            this.btnVerifyCode.UseVisualStyleBackColor = true;
+            this.btnVerifyCode.Click += new System.EventHandler(this.btnVerifyCode_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(263, 131);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(87, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Verification Code";
+            // 
+            // lblVerifyStatus
+            // 
+            this.lblVerifyStatus.AutoSize = true;
+            this.lblVerifyStatus.Location = new System.Drawing.Point(476, 150);
+            this.lblVerifyStatus.Name = "lblVerifyStatus";
+            this.lblVerifyStatus.Size = new System.Drawing.Size(37, 13);
+            this.lblVerifyStatus.TabIndex = 13;
+            this.lblVerifyStatus.Text = "Status";
             // 
             // ucSettings
             // 
@@ -268,16 +323,16 @@
             this.Controls.Add(this.pnlAccount);
             this.Name = "ucSettings";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 100);
-            this.Size = new System.Drawing.Size(707, 472);
+            this.Size = new System.Drawing.Size(690, 472);
             this.Load += new System.EventHandler(this.ucSettings_Load);
             this.pnlAccount.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.pnlDatabase.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,5 +359,10 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnUserManage;
         private System.Windows.Forms.Label lblLastEdited;
+        private System.Windows.Forms.Button btnVerifyCode;
+        private System.Windows.Forms.Button btnSendCode;
+        private System.Windows.Forms.TextBox txtVerifyCode;
+        private System.Windows.Forms.Label lblVerifyStatus;
+        private System.Windows.Forms.Label label6;
     }
 }

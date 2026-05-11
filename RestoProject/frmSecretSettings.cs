@@ -27,7 +27,6 @@ namespace RestoProject
 
         private void frmSecretSettings_Load(object sender, EventArgs e)
         {
-
         }
 
         private void btnSave_Click(object sender, EventArgs e)
