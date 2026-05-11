@@ -25,6 +25,17 @@ namespace RestoProject
             cmbRole.Items.Add("manager");
             cmbRole.Items.Add("staff");
         }
+        public static void dgvFormatter(DataGridView dgvStyle)
+        {
+            dgvStyle.RowHeadersVisible = false;
+            dgvStyle.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvStyle.MultiSelect = false;
+            dgvStyle.DefaultCellStyle.SelectionBackColor = Color.FromArgb(0, 120, 215);
+            dgvStyle.DefaultCellStyle.SelectionForeColor = Color.White;
+            dgvStyle.AllowUserToAddRows = false;
+            dgvStyle.ReadOnly = true;
+            dgvStyle.EnableHeadersVisualStyles = false;
+        }
         private void LoadUsers()
         {
             DBConnect db = new DBConnect();
@@ -51,6 +62,8 @@ namespace RestoProject
             {
                 db.Close();
             }
+
+            dgvFormatter(dgvUsers);
         }
         private void ClearFields()
         {
@@ -61,6 +74,7 @@ namespace RestoProject
         private void frmManageUsers_Load(object sender, EventArgs e)
         {
             LoadUsers();
+            dgvUsers.CellClick += dgvUsers_CellClick;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -131,6 +145,14 @@ namespace RestoProject
         private void lblUsername_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvUsers_SelectionChanged(object sender, EventArgs e)
+        {
+            bool hasRow = dgvUsers.CurrentRow != null;
+
+            btnUpdate.Enabled = hasRow;
+            btnClear.Enabled = hasRow;
         }
     }
 }

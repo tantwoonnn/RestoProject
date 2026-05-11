@@ -52,9 +52,9 @@
             this.lblProductCount.AutoSize = true;
             this.lblProductCount.Location = new System.Drawing.Point(64, 46);
             this.lblProductCount.Name = "lblProductCount";
-            this.lblProductCount.Size = new System.Drawing.Size(35, 13);
+            this.lblProductCount.Size = new System.Drawing.Size(49, 13);
             this.lblProductCount.TabIndex = 0;
-            this.lblProductCount.Text = "label1";
+            this.lblProductCount.Text = "Products";
             // 
             // groupBox1
             // 
@@ -83,7 +83,7 @@
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(35, 13);
             this.lblStock.TabIndex = 0;
-            this.lblStock.Text = "label1";
+            this.lblStock.Text = "Stock";
             // 
             // groupBox3
             // 
@@ -100,9 +100,9 @@
             this.lblEmployeeCount.AutoSize = true;
             this.lblEmployeeCount.Location = new System.Drawing.Point(64, 46);
             this.lblEmployeeCount.Name = "lblEmployeeCount";
-            this.lblEmployeeCount.Size = new System.Drawing.Size(35, 13);
+            this.lblEmployeeCount.Size = new System.Drawing.Size(58, 13);
             this.lblEmployeeCount.TabIndex = 0;
-            this.lblEmployeeCount.Text = "label2";
+            this.lblEmployeeCount.Text = "Employees";
             // 
             // groupBox4
             // 
@@ -116,6 +116,8 @@
             // 
             // dgvStock
             // 
+            this.dgvStock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvStock.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStock.Location = new System.Drawing.Point(25, 37);
             this.dgvStock.Name = "dgvStock";
@@ -146,9 +148,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(64, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(30, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "label2";
+            this.label1.Text = "Logs";
             // 
             // ucMainDash
             // 

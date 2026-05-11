@@ -196,6 +196,12 @@
     <Compile Include="frmRegister.Designer.cs">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSecretSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSecretSettings.Designer.cs">
+      <DependentUpon>frmSecretSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucEmployees.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -251,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegister.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSecretSettings.resx">
+      <DependentUpon>frmSecretSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucEmployees.resx">
       <DependentUpon>ucEmployees.cs</DependentUpon>

@@ -23,15 +23,39 @@ namespace RestoProject
     {
         private string attemptsFile = "attempts.txt";
         private UserCredential credential;
+        private int konIndex = 0;
+        private string[] konCode = new string[]{"Up","Up","Down","Down","Left","Right","Left","Right","B","A"};
         public frmLogin()
         {
             InitializeComponent();
+            this.KeyPreview = true;
             this.Size = new Size(1000, 600);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.StartPosition = FormStartPosition.CenterScreen;
         }
+        protected override void OnKeyDown(KeyEventArgs e)
+        {
+            base.OnKeyDown(e);
 
+            string key = e.KeyCode.ToString();
+
+            if (key == konCode[konIndex])
+            {
+                konIndex++;
+
+                if (konIndex == konCode.Length)
+                {
+                    konIndex = 0;
+                    frmSecretSettings secret = new frmSecretSettings();
+                    secret.ShowDialog();
+                }
+            }
+            else
+            {
+                konIndex = 0;
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -188,7 +212,7 @@ namespace RestoProject
         {
             try
             {
-                credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(new ClientSecrets{ClientId = "644592012507-n16tbn02v0vs54csdujmnuvabnmgjthp.apps.googleusercontent.com",ClientSecret = "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"},new[] {"email", "profile" }, "user", CancellationToken.None);
+                credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(new ClientSecrets{ClientId = Properties.Settings.Default.ClientId, ClientSecret = Properties.Settings.Default.ClientSecret },new[] {"email", "profile" }, "user", CancellationToken.None);
 
                 var oauthService = new Oauth2Service(new BaseClientService.Initializer(){HttpClientInitializer = credential});
 
