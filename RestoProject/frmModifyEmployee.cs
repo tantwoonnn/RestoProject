@@ -57,6 +57,7 @@ namespace RestoProject
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Employee updated successfully.");
+                Logger.Log("Updated employee: " + txtName.Text);
                 this.Close();
             }
             catch (Exception ex)

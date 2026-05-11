@@ -113,6 +113,7 @@ namespace RestoProject
                 Properties.Settings.Default.Save();
 
                 MessageBox.Show("Role updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Logger.Log("Changed role of " + lblUsername.Text + " to " + cmbRole.Text);  
                 LoadUsers();
                 ClearFields();
             }

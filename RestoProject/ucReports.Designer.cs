@@ -28,18 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dgvLogs = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dgvLogs
+            // 
+            this.dgvLogs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLogs.Location = new System.Drawing.Point(34, 50);
+            this.dgvLogs.Name = "dgvLogs";
+            this.dgvLogs.Size = new System.Drawing.Size(649, 385);
+            this.dgvLogs.TabIndex = 0;
             // 
             // ucReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dgvLogs);
             this.Name = "ucReports";
             this.Size = new System.Drawing.Size(724, 472);
+            this.Load += new System.EventHandler(this.ucReports_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dgvLogs;
     }
 }

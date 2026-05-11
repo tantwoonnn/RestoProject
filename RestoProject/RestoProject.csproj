@@ -202,6 +202,7 @@
     <Compile Include="frmSecretSettings.Designer.cs">
       <DependentUpon>frmSecretSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logger.cs" />
     <Compile Include="ucEmployees.cs">
       <SubType>UserControl</SubType>
     </Compile>

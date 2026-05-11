@@ -43,34 +43,46 @@ namespace RestoProject
                 string queryEmp = "SELECT COUNT(*) FROM employees";
                 string queryStock = "SELECT COUNT(*) FROM products WHERE quantity <= 10";
                 string queryStockAlert = "SELECT ProductName, Quantity FROM products WHERE Quantity <= 10";
+                string queryTodayCount = "SELECT COUNT(*) FROM logs WHERE DATE(LogDate) = CURDATE()";
+                string queryTodayLogs = "SELECT User, ChangesApplied, LogDate FROM logs WHERE DATE(LogDate) = CURDATE() ORDER BY LogDate DESC";
 
                 MySql.Data.MySqlClient.MySqlCommand cmdProd = new MySql.Data.MySqlClient.MySqlCommand(queryProd, db.Connection);
                 MySql.Data.MySqlClient.MySqlCommand cmdEmp = new MySql.Data.MySqlClient.MySqlCommand(queryEmp, db.Connection);
                 MySql.Data.MySqlClient.MySqlCommand cmdStock = new MySql.Data.MySqlClient.MySqlCommand(queryStock, db.Connection);
                 MySql.Data.MySqlClient.MySqlCommand cmdStockAlert = new MySql.Data.MySqlClient.MySqlCommand(queryStockAlert, db.Connection);
+                MySql.Data.MySqlClient.MySqlCommand cmdTodayCount = new MySql.Data.MySqlClient.MySqlCommand(queryTodayCount, db.Connection);
+                MySql.Data.MySqlClient.MySqlCommand cmdTodayLogs = new MySql.Data.MySqlClient.MySqlCommand(queryTodayLogs, db.Connection);
+
                 MySql.Data.MySqlClient.MySqlDataAdapter adapterAlert = new MySql.Data.MySqlClient.MySqlDataAdapter(cmdStockAlert);
+                MySql.Data.MySqlClient.MySqlDataAdapter adapterTodayLogs = new MySql.Data.MySqlClient.MySqlDataAdapter(cmdTodayLogs);
 
-                DataTable dt = new DataTable();
-                adapterAlert.Fill(dt);
+                DataTable dtStock = new DataTable();
+                adapterAlert.Fill(dtStock);
+                dgvStock.DataSource = dtStock;
 
-                dgvStock.DataSource = dt;
+                DataTable dtLogs = new DataTable();
+                adapterTodayLogs.Fill(dtLogs);
+                dgvRecentActivities.DataSource = dtLogs;
 
-                cmdStockAlert.Dispose();
                 int countProd = Convert.ToInt32(cmdProd.ExecuteScalar());
                 cmdProd.Dispose();
                 int countEmp = Convert.ToInt32(cmdEmp.ExecuteScalar());
                 cmdEmp.Dispose();
-                int Stock = Convert.ToInt32(cmdStock.ExecuteScalar());
+                int stock = Convert.ToInt32(cmdStock.ExecuteScalar());
                 cmdStock.Dispose();
+                int todayCount = Convert.ToInt32(cmdTodayCount.ExecuteScalar());
+                cmdTodayCount.Dispose();
                 cmdStockAlert.Dispose();
+                cmdTodayLogs.Dispose();
                 adapterAlert.Dispose();
-
+                adapterTodayLogs.Dispose();
 
                 lblProductCount.Text = countProd.ToString();
                 lblEmployeeCount.Text = countEmp.ToString();
-                lblStock.Text = Stock.ToString();
+                lblStock.Text = stock.ToString();
+                lblTodayActivities.Text = todayCount.ToString();
 
-                if (Stock != 0)
+                if (stock != 0)
                 {
                     lblStock.ForeColor = Color.Red;
                 }
@@ -78,6 +90,7 @@ namespace RestoProject
                 {
                     lblStock.ForeColor = Color.Green;
                 }
+
             }
             catch (Exception ex)
             {
@@ -89,6 +102,14 @@ namespace RestoProject
             }
 
             dgvFormatter(dgvStock);
+            dgvFormatter(dgvRecentActivities);
+
+            if (dgvRecentActivities.Columns.Count > 0)
+            {
+                dgvRecentActivities.Columns[0].FillWeight = 20;
+                dgvRecentActivities.Columns[1].FillWeight = 60;
+                dgvRecentActivities.Columns[2].FillWeight = 20;
+            }
         }
     }
 }

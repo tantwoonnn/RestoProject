@@ -225,7 +225,7 @@ namespace RestoProject
                     Properties.Settings.Default.LastBackup = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                     Properties.Settings.Default.Save();
                     lblLastBackup.Text = "Last Backup: " + Properties.Settings.Default.LastBackup;
-
+                    Logger.Log("Database backup created at: " + path);
                     MessageBox.Show("Backup successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
@@ -263,7 +263,7 @@ namespace RestoProject
                                 }
                             }
                         }
-
+                        Logger.Log("Database restored from: " + Path.GetFileName(openFile.FileName));
                         MessageBox.Show("Restore successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)

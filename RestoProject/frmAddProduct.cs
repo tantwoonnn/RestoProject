@@ -50,6 +50,7 @@ namespace RestoProject
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Product added successfully.");
+                Logger.Log("Added product: " + txtName.Text);
 
                 this.Close();
             }

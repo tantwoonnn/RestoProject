@@ -67,6 +67,7 @@ namespace RestoProject
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Product updated successfully.");
+                Logger.Log("Updated product: " + txtName.Text);
                 this.Close();
             }
             catch (Exception ex)

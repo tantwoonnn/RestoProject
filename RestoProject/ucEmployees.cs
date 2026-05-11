@@ -118,6 +118,8 @@ namespace RestoProject
 
             if (confirm != DialogResult.Yes) return;
 
+            Logger.Log("Deleted employee: " + dgvEmployees.CurrentRow.Cells["FullName"].Value.ToString());
+
             DBConnect db = new DBConnect();
 
             try

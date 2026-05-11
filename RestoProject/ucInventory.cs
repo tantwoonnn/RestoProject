@@ -12,6 +12,9 @@ namespace RestoProject
 {
     public partial class ucInventory : UserControl
     {
+        private string oldProductName = "";
+        private int oldQuantity = 0;
+        private decimal oldPrice = 0;
         public ucInventory()
         {
             InitializeComponent();
@@ -142,6 +145,8 @@ namespace RestoProject
             var confirm = MessageBox.Show("Are you sure you want to delete this product?","Confirm Delete",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
 
             if (confirm != DialogResult.Yes) return;
+
+            Logger.Log("Deleted product: " + dgvInventory.CurrentRow.Cells["ProductName"].Value.ToString());
 
             DBConnect db = new DBConnect();
 

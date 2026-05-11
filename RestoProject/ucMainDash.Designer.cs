@@ -38,23 +38,27 @@
             this.dgvStock = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTodayActivities = new System.Windows.Forms.Label();
+            this.dgvRecentActivities = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
+            this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecentActivities)).BeginInit();
             this.SuspendLayout();
             // 
             // lblProductCount
             // 
             this.lblProductCount.AutoSize = true;
-            this.lblProductCount.Location = new System.Drawing.Point(64, 46);
+            this.lblProductCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductCount.Location = new System.Drawing.Point(48, 46);
             this.lblProductCount.Name = "lblProductCount";
-            this.lblProductCount.Size = new System.Drawing.Size(49, 13);
+            this.lblProductCount.Size = new System.Drawing.Size(35, 24);
             this.lblProductCount.TabIndex = 0;
-            this.lblProductCount.Text = "Products";
+            this.lblProductCount.Text = "Nu";
             // 
             // groupBox1
             // 
@@ -79,11 +83,12 @@
             // lblStock
             // 
             this.lblStock.AutoSize = true;
-            this.lblStock.Location = new System.Drawing.Point(64, 46);
+            this.lblStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStock.Location = new System.Drawing.Point(50, 46);
             this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(35, 13);
+            this.lblStock.Size = new System.Drawing.Size(35, 24);
             this.lblStock.TabIndex = 0;
-            this.lblStock.Text = "Stock";
+            this.lblStock.Text = "Nu";
             // 
             // groupBox3
             // 
@@ -98,18 +103,19 @@
             // lblEmployeeCount
             // 
             this.lblEmployeeCount.AutoSize = true;
-            this.lblEmployeeCount.Location = new System.Drawing.Point(64, 46);
+            this.lblEmployeeCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeeCount.Location = new System.Drawing.Point(52, 46);
             this.lblEmployeeCount.Name = "lblEmployeeCount";
-            this.lblEmployeeCount.Size = new System.Drawing.Size(58, 13);
+            this.lblEmployeeCount.Size = new System.Drawing.Size(35, 24);
             this.lblEmployeeCount.TabIndex = 0;
-            this.lblEmployeeCount.Text = "Employees";
+            this.lblEmployeeCount.Text = "Nu";
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.dgvStock);
-            this.groupBox4.Location = new System.Drawing.Point(396, 169);
+            this.groupBox4.Location = new System.Drawing.Point(493, 169);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(310, 246);
+            this.groupBox4.Size = new System.Drawing.Size(213, 246);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Low Stock Alert";
@@ -119,23 +125,24 @@
             this.dgvStock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStock.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStock.Location = new System.Drawing.Point(25, 37);
+            this.dgvStock.Location = new System.Drawing.Point(16, 37);
             this.dgvStock.Name = "dgvStock";
-            this.dgvStock.Size = new System.Drawing.Size(262, 188);
+            this.dgvStock.Size = new System.Drawing.Size(179, 188);
             this.dgvStock.TabIndex = 0;
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.dgvRecentActivities);
             this.groupBox5.Location = new System.Drawing.Point(34, 179);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(338, 215);
+            this.groupBox5.Size = new System.Drawing.Size(435, 215);
             this.groupBox5.TabIndex = 5;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Recent Activity";
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.label1);
+            this.groupBox6.Controls.Add(this.lblTodayActivities);
             this.groupBox6.Location = new System.Drawing.Point(551, 32);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(155, 100);
@@ -143,14 +150,23 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Today\'s Logs";
             // 
-            // label1
+            // lblTodayActivities
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(64, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Logs";
+            this.lblTodayActivities.AutoSize = true;
+            this.lblTodayActivities.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTodayActivities.Location = new System.Drawing.Point(55, 46);
+            this.lblTodayActivities.Name = "lblTodayActivities";
+            this.lblTodayActivities.Size = new System.Drawing.Size(35, 24);
+            this.lblTodayActivities.TabIndex = 0;
+            this.lblTodayActivities.Text = "Nu";
+            // 
+            // dgvRecentActivities
+            // 
+            this.dgvRecentActivities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRecentActivities.Location = new System.Drawing.Point(16, 27);
+            this.dgvRecentActivities.Name = "dgvRecentActivities";
+            this.dgvRecentActivities.Size = new System.Drawing.Size(401, 173);
+            this.dgvRecentActivities.TabIndex = 0;
             // 
             // ucMainDash
             // 
@@ -173,8 +189,10 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
+            this.groupBox5.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecentActivities)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -190,7 +208,8 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dgvStock;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTodayActivities;
         private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.DataGridView dgvRecentActivities;
     }
 }
