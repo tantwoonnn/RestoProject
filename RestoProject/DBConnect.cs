@@ -10,9 +10,8 @@ namespace RestoProject
 {
     public class DBConnect
     {
-        private MySqlConnection connection = new MySqlConnection(
-            "server=localhost;user=root;database=inventory;port=3306;password=;"
-        );
+        public static string ConnectionString = "server=localhost;user=root;database=inventory;port=3306;password=;";
+        private MySqlConnection connection = new MySqlConnection(ConnectionString);
 
         public MySqlConnection Connection => connection;
 

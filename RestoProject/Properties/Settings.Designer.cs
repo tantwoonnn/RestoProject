@@ -70,5 +70,41 @@ namespace RestoProject.Properties {
                 this["IsGoogleLogin"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LastBackup {
+            get {
+                return ((string)(this["LastBackup"]));
+            }
+            set {
+                this["LastBackup"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LastEditedBy {
+            get {
+                return ((string)(this["LastEditedBy"]));
+            }
+            set {
+                this["LastEditedBy"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LastEditedAt {
+            get {
+                return ((string)(this["LastEditedAt"]));
+            }
+            set {
+                this["LastEditedAt"] = value;
+            }
+        }
     }
 }

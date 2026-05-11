@@ -40,9 +40,19 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlDatabase = new System.Windows.Forms.Panel();
+            this.btnBackup = new System.Windows.Forms.Button();
+            this.btnRestore = new System.Windows.Forms.Button();
+            this.lblLastBackup = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnUserManage = new System.Windows.Forms.Button();
+            this.lblLastEdited = new System.Windows.Forms.Label();
             this.pnlAccount.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.pnlDatabase.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLogout
@@ -64,8 +74,10 @@
             // 
             // pnlAccount
             // 
+            this.pnlAccount.BackColor = System.Drawing.SystemColors.ControlDark;
             this.pnlAccount.Controls.Add(this.groupBox1);
             this.pnlAccount.Controls.Add(this.btnLogout);
+            this.pnlAccount.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pnlAccount.Location = new System.Drawing.Point(52, 51);
             this.pnlAccount.Name = "pnlAccount";
             this.pnlAccount.Size = new System.Drawing.Size(624, 313);
@@ -161,29 +173,111 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Database";
             // 
-            // panel1
+            // pnlDatabase
             // 
-            this.panel1.Location = new System.Drawing.Point(52, 430);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(624, 273);
-            this.panel1.TabIndex = 6;
+            this.pnlDatabase.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pnlDatabase.Controls.Add(this.groupBox3);
+            this.pnlDatabase.Controls.Add(this.groupBox2);
+            this.pnlDatabase.Location = new System.Drawing.Point(52, 430);
+            this.pnlDatabase.Name = "pnlDatabase";
+            this.pnlDatabase.Size = new System.Drawing.Size(624, 313);
+            this.pnlDatabase.TabIndex = 6;
+            // 
+            // btnBackup
+            // 
+            this.btnBackup.Location = new System.Drawing.Point(20, 29);
+            this.btnBackup.Name = "btnBackup";
+            this.btnBackup.Size = new System.Drawing.Size(246, 40);
+            this.btnBackup.TabIndex = 0;
+            this.btnBackup.Text = "Backup Database";
+            this.btnBackup.UseVisualStyleBackColor = true;
+            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
+            // 
+            // btnRestore
+            // 
+            this.btnRestore.Location = new System.Drawing.Point(20, 85);
+            this.btnRestore.Name = "btnRestore";
+            this.btnRestore.Size = new System.Drawing.Size(246, 42);
+            this.btnRestore.TabIndex = 1;
+            this.btnRestore.Text = "Restore Backup";
+            this.btnRestore.UseVisualStyleBackColor = true;
+            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
+            // 
+            // lblLastBackup
+            // 
+            this.lblLastBackup.AutoSize = true;
+            this.lblLastBackup.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastBackup.Location = new System.Drawing.Point(25, 141);
+            this.lblLastBackup.Name = "lblLastBackup";
+            this.lblLastBackup.Size = new System.Drawing.Size(93, 20);
+            this.lblLastBackup.TabIndex = 2;
+            this.lblLastBackup.Text = "Last Backup:";
+            this.lblLastBackup.Click += new System.EventHandler(this.lblLastBackup_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnRestore);
+            this.groupBox2.Controls.Add(this.lblLastBackup);
+            this.groupBox2.Controls.Add(this.btnBackup);
+            this.groupBox2.Location = new System.Drawing.Point(14, 30);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(286, 180);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Database Backup";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.lblLastEdited);
+            this.groupBox3.Controls.Add(this.btnUserManage);
+            this.groupBox3.Location = new System.Drawing.Point(324, 30);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(283, 180);
+            this.groupBox3.TabIndex = 4;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "User Management";
+            // 
+            // btnUserManage
+            // 
+            this.btnUserManage.Location = new System.Drawing.Point(15, 29);
+            this.btnUserManage.Name = "btnUserManage";
+            this.btnUserManage.Size = new System.Drawing.Size(252, 40);
+            this.btnUserManage.TabIndex = 3;
+            this.btnUserManage.Text = "Manage Users";
+            this.btnUserManage.UseVisualStyleBackColor = true;
+            this.btnUserManage.Click += new System.EventHandler(this.btnUserManage_Click);
+            // 
+            // lblLastEdited
+            // 
+            this.lblLastEdited.AutoSize = true;
+            this.lblLastEdited.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastEdited.Location = new System.Drawing.Point(12, 99);
+            this.lblLastEdited.Name = "lblLastEdited";
+            this.lblLastEdited.Size = new System.Drawing.Size(67, 15);
+            this.lblLastEdited.TabIndex = 3;
+            this.lblLastEdited.Text = "Last Edited:";
             // 
             // ucSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlDatabase);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pnlAccount);
             this.Name = "ucSettings";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 100);
-            this.Size = new System.Drawing.Size(724, 472);
+            this.Size = new System.Drawing.Size(707, 472);
             this.Load += new System.EventHandler(this.ucSettings_Load);
             this.pnlAccount.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.pnlDatabase.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,6 +296,13 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlDatabase;
+        private System.Windows.Forms.Button btnRestore;
+        private System.Windows.Forms.Button btnBackup;
+        private System.Windows.Forms.Label lblLastBackup;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btnUserManage;
+        private System.Windows.Forms.Label lblLastEdited;
     }
 }
