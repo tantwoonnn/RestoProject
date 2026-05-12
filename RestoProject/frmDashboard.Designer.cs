@@ -177,7 +177,7 @@
             // 
             // pnlTab
             // 
-            this.pnlTab.BackColor = System.Drawing.Color.White;
+            this.pnlTab.BackColor = System.Drawing.Color.Black;
             this.pnlTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTab.Location = new System.Drawing.Point(260, 89);
             this.pnlTab.MinimumSize = new System.Drawing.Size(126, 50);
@@ -189,7 +189,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.pnlTab);
             this.Controls.Add(this.pnlHeader);
