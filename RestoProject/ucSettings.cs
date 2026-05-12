@@ -103,9 +103,9 @@ namespace RestoProject
             Properties.Settings.Default.Role = "";
             Properties.Settings.Default.Save();
 
+            new frmLogin().Show();
             Form parentForm = this.FindForm();
             parentForm.Close();
-            new frmLogin().Show();
         }
 
         private void pnlAccount_Paint(object sender, PaintEventArgs e)
