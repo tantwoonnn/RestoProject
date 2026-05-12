@@ -177,7 +177,7 @@
             // 
             // pnlTab
             // 
-            this.pnlTab.BackColor = System.Drawing.Color.Black;
+            this.pnlTab.BackColor = System.Drawing.Color.White;
             this.pnlTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTab.Location = new System.Drawing.Point(260, 89);
             this.pnlTab.MinimumSize = new System.Drawing.Size(126, 50);
