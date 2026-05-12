@@ -104,6 +104,7 @@ namespace RestoProject
             Properties.Settings.Default.Save();
 
             new frmLogin().Show();
+
             Form parentForm = this.FindForm();
             parentForm.Close();
         }

@@ -37,17 +37,17 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvStock = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dgvRecentActivities = new System.Windows.Forms.DataGridView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.lblTodayActivities = new System.Windows.Forms.Label();
-            this.dgvRecentActivities = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
             this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecentActivities)).BeginInit();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblProductCount
@@ -140,6 +140,14 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Recent Activity";
             // 
+            // dgvRecentActivities
+            // 
+            this.dgvRecentActivities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRecentActivities.Location = new System.Drawing.Point(16, 27);
+            this.dgvRecentActivities.Name = "dgvRecentActivities";
+            this.dgvRecentActivities.Size = new System.Drawing.Size(401, 173);
+            this.dgvRecentActivities.TabIndex = 0;
+            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.lblTodayActivities);
@@ -160,18 +168,11 @@
             this.lblTodayActivities.TabIndex = 0;
             this.lblTodayActivities.Text = "Nu";
             // 
-            // dgvRecentActivities
-            // 
-            this.dgvRecentActivities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRecentActivities.Location = new System.Drawing.Point(16, 27);
-            this.dgvRecentActivities.Name = "dgvRecentActivities";
-            this.dgvRecentActivities.Size = new System.Drawing.Size(401, 173);
-            this.dgvRecentActivities.TabIndex = 0;
-            // 
             // ucMainDash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -190,9 +191,9 @@
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
             this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecentActivities)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRecentActivities)).EndInit();
             this.ResumeLayout(false);
 
         }

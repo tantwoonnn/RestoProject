@@ -32,6 +32,11 @@
             this.txtOldPassword = new System.Windows.Forms.TextBox();
             this.pnlAccount = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblVerifyStatus = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnVerifyCode = new System.Windows.Forms.Button();
+            this.btnSendCode = new System.Windows.Forms.Button();
+            this.txtVerifyCode = new System.Windows.Forms.TextBox();
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,11 +53,6 @@
             this.btnRestore = new System.Windows.Forms.Button();
             this.lblLastBackup = new System.Windows.Forms.Label();
             this.btnBackup = new System.Windows.Forms.Button();
-            this.txtVerifyCode = new System.Windows.Forms.TextBox();
-            this.btnSendCode = new System.Windows.Forms.Button();
-            this.btnVerifyCode = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblVerifyStatus = new System.Windows.Forms.Label();
             this.pnlAccount.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.pnlDatabase.SuspendLayout();
@@ -109,6 +109,51 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Change Password";
+            // 
+            // lblVerifyStatus
+            // 
+            this.lblVerifyStatus.AutoSize = true;
+            this.lblVerifyStatus.Location = new System.Drawing.Point(476, 150);
+            this.lblVerifyStatus.Name = "lblVerifyStatus";
+            this.lblVerifyStatus.Size = new System.Drawing.Size(37, 13);
+            this.lblVerifyStatus.TabIndex = 13;
+            this.lblVerifyStatus.Text = "Status";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(263, 131);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(87, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Verification Code";
+            // 
+            // btnVerifyCode
+            // 
+            this.btnVerifyCode.Location = new System.Drawing.Point(395, 145);
+            this.btnVerifyCode.Name = "btnVerifyCode";
+            this.btnVerifyCode.Size = new System.Drawing.Size(75, 23);
+            this.btnVerifyCode.TabIndex = 11;
+            this.btnVerifyCode.Text = "Verify";
+            this.btnVerifyCode.UseVisualStyleBackColor = true;
+            this.btnVerifyCode.Click += new System.EventHandler(this.btnVerifyCode_Click);
+            // 
+            // btnSendCode
+            // 
+            this.btnSendCode.Location = new System.Drawing.Point(266, 173);
+            this.btnSendCode.Name = "btnSendCode";
+            this.btnSendCode.Size = new System.Drawing.Size(75, 23);
+            this.btnSendCode.TabIndex = 10;
+            this.btnSendCode.Text = "Send Code";
+            this.btnSendCode.UseVisualStyleBackColor = true;
+            this.btnSendCode.Click += new System.EventHandler(this.btnSendCode_Click);
+            // 
+            // txtVerifyCode
+            // 
+            this.txtVerifyCode.Location = new System.Drawing.Point(266, 147);
+            this.txtVerifyCode.Name = "txtVerifyCode";
+            this.txtVerifyCode.Size = new System.Drawing.Size(123, 20);
+            this.txtVerifyCode.TabIndex = 9;
             // 
             // btnChangePassword
             // 
@@ -167,6 +212,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(48, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 21);
@@ -177,6 +223,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label5.Location = new System.Drawing.Point(48, 406);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 21);
@@ -267,63 +314,19 @@
             this.btnBackup.UseVisualStyleBackColor = true;
             this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
             // 
-            // txtVerifyCode
-            // 
-            this.txtVerifyCode.Location = new System.Drawing.Point(266, 147);
-            this.txtVerifyCode.Name = "txtVerifyCode";
-            this.txtVerifyCode.Size = new System.Drawing.Size(123, 20);
-            this.txtVerifyCode.TabIndex = 9;
-            // 
-            // btnSendCode
-            // 
-            this.btnSendCode.Location = new System.Drawing.Point(266, 173);
-            this.btnSendCode.Name = "btnSendCode";
-            this.btnSendCode.Size = new System.Drawing.Size(75, 23);
-            this.btnSendCode.TabIndex = 10;
-            this.btnSendCode.Text = "Send Code";
-            this.btnSendCode.UseVisualStyleBackColor = true;
-            this.btnSendCode.Click += new System.EventHandler(this.btnSendCode_Click);
-            // 
-            // btnVerifyCode
-            // 
-            this.btnVerifyCode.Location = new System.Drawing.Point(395, 145);
-            this.btnVerifyCode.Name = "btnVerifyCode";
-            this.btnVerifyCode.Size = new System.Drawing.Size(75, 23);
-            this.btnVerifyCode.TabIndex = 11;
-            this.btnVerifyCode.Text = "Verify";
-            this.btnVerifyCode.UseVisualStyleBackColor = true;
-            this.btnVerifyCode.Click += new System.EventHandler(this.btnVerifyCode_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(263, 131);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Verification Code";
-            // 
-            // lblVerifyStatus
-            // 
-            this.lblVerifyStatus.AutoSize = true;
-            this.lblVerifyStatus.Location = new System.Drawing.Point(476, 150);
-            this.lblVerifyStatus.Name = "lblVerifyStatus";
-            this.lblVerifyStatus.Size = new System.Drawing.Size(37, 13);
-            this.lblVerifyStatus.TabIndex = 13;
-            this.lblVerifyStatus.Text = "Status";
-            // 
             // ucSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Controls.Add(this.pnlDatabase);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pnlAccount);
             this.Name = "ucSettings";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 100);
-            this.Size = new System.Drawing.Size(690, 472);
+            this.Size = new System.Drawing.Size(673, 455);
             this.Load += new System.EventHandler(this.ucSettings_Load);
             this.pnlAccount.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

@@ -68,5 +68,10 @@ namespace RestoProject
                 db.Close();
             }
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

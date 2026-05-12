@@ -53,7 +53,7 @@
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblStatus.Location = new System.Drawing.Point(221, 211);
+            this.lblStatus.Location = new System.Drawing.Point(163, 214);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(57, 21);
             this.lblStatus.TabIndex = 1;

@@ -202,5 +202,15 @@ namespace RestoProject
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtConfirmPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
