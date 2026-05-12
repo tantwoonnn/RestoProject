@@ -16,6 +16,10 @@ namespace RestoProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            Loading loading = new Loading();
+            loading.ShowDialog();
+
             if (Properties.Settings.Default.IsLoggedIn)
             {
                 string username = Properties.Settings.Default.Username;
@@ -25,7 +29,7 @@ namespace RestoProject
             }
             else
             {
-                Application.Run(new frmRegister());
+                Application.Run(new frmLogin());
             }
         }
     }

@@ -176,9 +176,6 @@ namespace RestoProject
                     Properties.Settings.Default.Save();
 
                     MessageBox.Show($"Login Successful! Welcome {role} {username}");
-                    Loading loadFrm = new Loading();
-                    loadFrm.ShowDialog();
-                    
                     frmDashboard dashboard = new frmDashboard(username, role);
                     dashboard.Show();
                     this.Hide();

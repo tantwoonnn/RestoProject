@@ -16,6 +16,7 @@ namespace RestoProject
         public Loading()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -54,9 +55,7 @@ namespace RestoProject
             if (progress >= 100)
             {
                 timer1.Stop();
-
-
-                this.Hide();
+                this.Close();
             }
         }
     }
