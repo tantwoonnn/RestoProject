@@ -1,3 +1,10 @@
 <Solution>
-  <Project Path="RestoProject/RestoProject.csproj" Id="dd493a7e-b6ea-4024-8ff8-fb410da4fa70" />
+  <Configurations>
+    <BuildType Name="AxiomaRelease1" />
+    <BuildType Name="Debug" />
+    <BuildType Name="Release" />
+  </Configurations>
+  <Project Path="RestoProject/RestoProject.csproj" Id="dd493a7e-b6ea-4024-8ff8-fb410da4fa70">
+    <BuildType Solution="AxiomaRelease1|*" Project="Release" />
+  </Project>
 </Solution>
